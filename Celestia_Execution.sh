@@ -42,16 +42,6 @@ sudo update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX
 
 print_color "36" "한글설치완료"
 
-# updating go
-print_color "33" "updating Go"
-sudo apt remove golang-go -y
-sudo apt autoremove -y
-wget https://go.dev/dl/go1.22.4.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf go1.22.4.linux-amd64.tar.gz
-rm go1.22.4.linux-amd64.tar.gz
-
-
 # Update PATH
 print_color "33" "Updating PATH"
 update_bashrc() {
