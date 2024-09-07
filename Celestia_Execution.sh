@@ -138,10 +138,10 @@ sudo systemctl status celestia-light --no-pager
 
 print_color "35" "이후 'AUTH_TOKEN=$(celestia light auth admin --p2p.network celestia)' 입력해 주기."
 print_color "35" "이후 '
-curl -X POST &
-     -H "Authorization: Bearer $AUTH_TOKEN" &
-     -H 'Content-Type: application/json' &
-     -d '{"jsonrpc":"2.0","id":0,"method":"p2p.Info","params":[]}' &
+curl -X POST \
+     -H "Authorization: Bearer $AUTH_TOKEN" \
+     -H 'Content-Type: application/json' \
+     -d '{"jsonrpc":"2.0","id":0,"method":"p2p.Info","params":[]}' \
      http://localhost:26658'
 입력해 주기"
 
