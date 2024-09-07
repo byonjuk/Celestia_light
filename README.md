@@ -57,6 +57,7 @@ go version
 #설치된 셀레스티아 노드 삭제
 cd ~/celestia-node
 make clean
+cd $HOME
 sudo rm -rf ~/celesti-node
 ```
 실행하셈.
