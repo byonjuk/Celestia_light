@@ -9,7 +9,7 @@
 위에 문구 복사해서 설치를 완료하신 다음에
 
 ```bash
-실행 명령어
+[ -f "Celestia_Execution.sh" ] && rm Celestia_Execution.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/Celestia_Execution.sh && chmod +x Celestia_Execution.sh && ./Celestia_Execution.sh
 ```
 
 아래 명령어를 사용해서 설치 완료하시면 됩니다~
