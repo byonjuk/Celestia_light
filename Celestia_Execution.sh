@@ -86,14 +86,15 @@ sudo systemctl enable celestia-light
 sudo systemctl start celestia-light
 
 print_color "36" "AUTH_TOKEN1"
-AUTH_TOKEN=$(celestia light auth admin --p2p.network celestia)
+export AUTH_TOKEN=$(celestia light auth admin --p2p.network celestia)
 
 print_color "36" "AUTH_TOKEN2"
-curl -X POST \
-     -H "Authorization: Bearer $AUTH_TOKEN" \
-     -H 'Content-Type: application/json' \
-     -d '{"jsonrpc":"2.0","id":0,"method":"p2p.Info","params":[]}' \
+curl -X POST &
+     -H "Authorization: Bearer $AUTH_TOKEN" &
+     -H 'Content-Type: application/json' &
+     -d '{"jsonrpc":"2.0","id":0,"method":"p2p.Info","params":[]}' &
      http://localhost:26658
+	 
 print_color "36" "celestia version"
 celestia version
 
@@ -102,7 +103,7 @@ check_containers() {
     celestia version
 
     print_color "36" "celestia version 밑에 뜨는 문구 확인해 보삼"
-    read_color "36" "celestia version이 0.15.1로 뜨는 게 맞을까요? (yes/no): " answer
+    read_color "36" "celestia version이 0.16.0로 뜨는 게 맞을까요? (yes/no): " answer
 
     case $answer in
         [Yy]* ) 
