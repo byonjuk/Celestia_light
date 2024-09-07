@@ -85,6 +85,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable celestia-light
 sudo systemctl start celestia-light
 
+print_color "36" "celestia version"
+cd $HOME
+
 print_color "36" "AUTH_TOKEN1"
 export AUTH_TOKEN=$(celestia light auth admin --p2p.network celestia)
 
