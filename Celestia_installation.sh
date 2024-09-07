@@ -106,7 +106,7 @@ make install
 print_color "32" "make cel-key"
 make cel-key
 
-print_color "36" "'screen -S Celestia', 입력후에 'celestia light init --core.ip rpc.celestia.pops.one --p2p.network celestia' 입력"
+print_color "36" "'screen -S Celestia_wallet', 입력후에 'celestia light init --core.ip rpc.celestia.pops.one --p2p.network celestia' 입력"
 print_color "36" "입력하고 뜨는 celestial address랑 mnemonic 24단어 무조건 저장하세요. 만약 저장 안 하셨다면 저한테 명령어 받으러 오삼..."
 
 
