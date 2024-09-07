@@ -24,7 +24,7 @@ screen -r Celestia_wallet
 ```
 를 입력하시면 님의 셀레스티아 지갑 주소와 복구구문이 떠용~ ㅎㅎ
 
-## 내가 go를 삭제하고 싶어요(go가 뭔지 모르면 스킵하셈ㅇㅇ
+## 내가 go를 삭제하고 싶어요(go가 뭔지 모르면 스킵하셈)
 
 ```bash
 # go언어 제거 하기
@@ -38,4 +38,10 @@ source ~/.bashrc
 
 # 제거 확인
 go version
+
+#설치된 셀레스티아 노드 삭제
+cd ~/celestia-node
+make clean
+sudo rm -rf ~/celesti-node
 ```
+실행하셈.
