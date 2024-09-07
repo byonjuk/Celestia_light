@@ -14,9 +14,24 @@
 
 아래 명령어를 사용해서 설치 완료하시면 됩니다~
 
-## 추가로 해야하는 작업
+## AUTH_TOKEN 설정하기
+```bahs
+AUTH_TOKEN=$(celestia light auth admin --p2p.network celestia)
+```
+먼저 입력한 뒤에 
+```bash
+curl -X POST \
+     -H "Authorization: Bearer $AUTH_TOKEN" \
+     -H 'Content-Type: application/json' \
+     -d '{"jsonrpc":"2.0","id":0,"method":"p2p.Info","params":[]}' \
+     http://localhost:26658
+```
+입력하기
 
-디코 링크 달아줄 거니까 기달.
+```bash
+{"id":0,"jsonrpc":"2.0","result":{"ID":"12D3KooWRPi7xNb4DVVReLXBazkEyPi4oDMpdKbsexMxo4NcuAED","Addrs":["/ip4/100.42.177.209/tcp/2121","/ip4/100.42.177.209/udp/2121/webrtc-direct/certhash/uEiDne8Clv1Pobo636LRp8nMy7J20bQX1ufm53i7BSTJJ7Q","/ip4/100.42.177.209/udp/2121/webrtc-direct/certhash/uEiDne8Clv1Pobo636LRp8nMy7J20bQX1ufm53i7BSTJJ7Q","/ip4/100.42.177.209/udp/2121/quic-v1","/ip4/100.42.177.209/udp/2121/quic-v1/webtransport/certhash/uEiDAwuLtB8slFJK4lfO4xWHYeGW4QWkVyVhXjIkmH4KaNA/certhash/uEiCdKGuPzH_hMXf_RDFuBcZJI4PwLPoN_7oYwFJvG1h73Q","/ip4/100.42.177.209/udp/2121/quic-v1/webtransport/certhash/uEiDAwuLtB8slFJK4lfO4xWHYeGW4QWkVyVhXjIkmH4KaNA/certhash/uEiCdKGuPzH_hMXf_RDFuBcZJI4PwLPoN_7oYwFJvG1h73Q","/ip4/127.0.0.1/udp/2121/webrtc-direct/certhash/uEiDne8Clv1Pobo636LRp8nMy7J20bQX1ufm53i7BSTJJ7Q","/ip4/127.0.0.1/udp/2121/quic-v1/webtransport/certhash/uEiDAwuLtB8slFJK4lfO4xWHYeGW4QWkVyVhXjIkmH4KaNA/certhash/uEiCdKGuPzH_hMXf_RDFuBcZJI4PwLPoN_7oYwFJvG1h73Q"]}}
+```
+이런 명령어가 뜨면 성공!
 
 ## 나의 지갑 주소와 MNEMONIC PHRASE(복구 24단어)를 다시 보고 싶어요 ㅠ
 ```bash
