@@ -24,3 +24,18 @@ screen -r Celestia_wallet
 ```
 를 입력하시면 님의 셀레스티아 지갑 주소와 복구구문이 떠용~ ㅎㅎ
 
+## 내가 go를 삭제하고 싶어요(go가 뭔지 모르면 스킵하셈ㅇㅇ
+
+```bash
+# go언어 제거 하기
+sudo apt-get purge golang*
+sudo rm -rf /usr/local/go
+sudo rm -rf $(echo $GOPATH)
+
+# ~/bashrc 또는 ~/.profile에서 go 관련된 항목 제거(기존에 설정한 파일에서 작업)
+source ~/.profile
+source ~/.bashrc
+
+# 제거 확인
+go version
+```
