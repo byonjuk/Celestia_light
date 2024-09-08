@@ -11,8 +11,7 @@
 ```bash
 [ -f "Celestia_Execution.sh" ] && rm Celestia_Execution.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/Celestia_Execution.sh && chmod +x Celestia_Execution.sh && ./Celestia_Execution.sh
 ```
-
-아래 명령어를 사용해서 설치 완료하시면 됩니다~
+이 명령어까지 복사해 주세요. 그 다음에 밑에 있는 Auth_Token까지 설정해 주세요~
 
 ## AUTH_TOKEN 설정하기
 ```bahs
