@@ -136,15 +136,7 @@ print_color "36" "상태창 띄워드릴게용~"
 sudo systemctl status celestia-light --no-pager
 
 
-print_color "35" "이후 'AUTH_TOKEN=$(celestia light auth admin --p2p.network celestia)' 입력해 주기."
-print_color "35" "이후 '
-curl -X POST \
-     -H "Authorization: Bearer $AUTH_TOKEN" \
-     -H 'Content-Type: application/json' \
-     -d '{"jsonrpc":"2.0","id":0,"method":"p2p.Info","params":[]}' \
-     http://localhost:26658'
-입력해 주기"
-
+print_color "35" "아직 끝난 거 아니에용. 홈페이지에 들어가서 제가 입력하라고 한 2개의 명령어 (AUTH_TOKEN 부분) 입력해 주세용"
 print_color "35" "이후 'screen -S Celestia_logs' 쳐서 'sudo journalctl -u celestia-light -f' 입력 후에 로그가 제대로 나오는지 확인"
 print_color "34" "로그가 주르륵 올라오면 컨트롤 A + D 를 눌러서 스크린에서 탈출해 보세요"
 
