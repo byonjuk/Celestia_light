@@ -1,7 +1,7 @@
-## 셀레스티아 설치하는 방법
+# 셀레스티아 설치하는 방법
 
 - 먼저 콘타보에 로그인하세용~
-
+## 설치 명령어
 ```bash
 [ -f "Celestia_installation.sh" ] && rm Celestia_installation.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/Celestia_installation.sh && chmod +x Celestia_installation.sh && ./Celestia_installation.sh
 ```
@@ -31,6 +31,17 @@ curl -X POST \
 {"id":0,"jsonrpc":"2.0","result":{"ID":"12D3KooWRPi7xNb4DVVReLXBazkEyPi4oDMpdKbsexMxo4NcuAED","Addrs":["/ip4/111.11.111.111/tcp/2121","/ip4/123.456.789.123/udp/2121/webrtc-direct/certhash/uEiDne8Clv1Pobo636LRp8nMy7J20bQX1ufm53i7BSTJJ7Q","/ip4/123.345.322.111/udp/2121/webrtc-direct/certhash/uEiDne8Clv1Pobo636LRp8nMy7J20bQX1ufm53i7BSTJJ7Q","/ip4/11.11.111.111/udp/2121/quic-v1","/ip4/100.42.177.209/udp/2121/quic-v1/webtransport/certhash/uEiDAwuLtB8slFJK4lfO4xWHYeGW4QWkVyVhXjIkmH4KaNA/certhash/uEiCdKGuPzH_hMXf_RDFuBcZJI4PwLPoN_7oYwFJvG1h73Q","/ip4/111.111.111.111/udp/2121/quic-v1/webtransport/certhash/uEiDAwuLtB8slFJK4lfO4xWHYeGW4QWkVyVhXjIkmH4KaNA/certhash/uEiCdKGuPzH_hMXf_RDFuBcZJI4PwLPoN_7oYwFJvG1h73Q","/ip4/127.0.0.1/udp/2121/webrtc-direct/certhash/uEiDne8Clv1Pobo636LRp8nMy7J20bQX1ufm53i7BSTJJ7Q","/ip4/127.0.0.1/udp/2121/quic-v1/webtransport/certhash/uEiDAwuLtB8slFJK4lfO4xWHYeGW4QWkVyVhXjIkmH4KaNA/certhash/uEiCdKGuPzH_hMXf_RDFuBcZJI4PwLPoN_7oYwFJvG1h73Q"]}}
 ```
 이런 명령어가 뜨면 성공!
+
+## 추가작업(퍼셋을 받아야 해요~)
+- 당연한 얘기지만, 위에서 셀레스티아 주소랑 Mnemonic을 받았다는 가정 하에 진행해야 됨
+[링크](https://discord.gg/h6M37h8e)로 들어가서 Verify 완료한 다음에
+- arabica-faucet
+- mocha-faucet
+채널에 가서 $request 님셀레스티아 지갑주소를 쳐서 넣으셈
+```bash
+예시 : $request Celestial122342143214trefedvcxbfd432142
+```
+이런 식으로 ㅇㅇ 그러면 진짜 끝~
 
 ## 나의 지갑 주소와 MNEMONIC PHRASE(복구 24단어)를 다시 보고 싶어요 ㅠ
 ```bash
