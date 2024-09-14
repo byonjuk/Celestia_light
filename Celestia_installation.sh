@@ -84,7 +84,7 @@ print_color "32" "git clone https://github.com/celestiaorg/celestia-node.git"
 git clone https://github.com/celestiaorg/celestia-node.git
 
 print_color "32" "cd celestia-node/"
-cd celestia-node/
+cd $HOME/celestia-node/
 
 print_color "32" "git checkout tags/v0.16.1-rc0"
 git checkout tags/v0.16.0
