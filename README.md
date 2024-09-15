@@ -9,6 +9,22 @@
 위에 문구 복사해서 설치를 완료하신 다음에
 
 ```bash
+screen -S Celestia_wallet
+```
+를 치시면 새로운 화면이 뜰 거에용
+
+이후에
+```bash
+celestia light init --core.ip rpc.celestia.pops.one --p2p.network celestia
+```
+를 치면 님의 지갑 주소와 MNEMONIC PHRASE(복구구문)이 떠용. 이거 어디다 잘 저장해 두세욤 ㅎㅎ
+
+그러고
+
+> ### CTRL + A + D를 눌러서 밖으로 나오기!
+
+그 다음으로는
+```bash
 [ -f "Celestia_Execution.sh" ] && rm Celestia_Execution.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/Celestia_Execution.sh && chmod +x Celestia_Execution.sh && ./Celestia_Execution.sh
 ```
 이 명령어까지 복사해 주세요. 그 다음에 밑에 있는 Auth_Token까지 설정해 주세요~
@@ -48,6 +64,8 @@ curl -X POST \
 screen -r Celestia_wallet
 ```
 를 입력하시면 님의 셀레스티아 지갑 주소와 복구구문이 떠용~ ㅎㅎ
+
+근데 이게 시간이 넘 오래 되면 ㅎ 안 뜰 수도 있어욤. 그건 스크린이 시간이 지나면서 삭제된 건데. 얘 뭐.... 안타깝습니다..
 
 ## 내가 go를 삭제하고 싶어요(go가 뭔지 모르면 스킵하셈)
 
