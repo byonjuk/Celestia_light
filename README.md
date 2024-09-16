@@ -3,7 +3,7 @@
 - 먼저 콘타보에 로그인하세용~
 ## 설치 명령어
 ```bash
-[ -f "Celestia_light.sh" ] && rm Celestia_light.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/celestia_light.sh && chmod +x Celestia_light.sh && ./Celestia_light.sh
+[ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
 ```
 
 위에 문구 복사해서 설치를 완료하신 다음에
