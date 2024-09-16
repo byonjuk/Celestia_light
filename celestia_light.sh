@@ -263,6 +263,13 @@ echo -e "${CYAN}셀레스티아 서비스 지우기${NC}"
 sudo rm /etc/systemd/system/celestia-light.service
 sudo systemctl daemon-reload
 
+echo -e "${CYAN}AUTH_TOKEN 삭제하기${NC}"
+unset AUTH_TOKEN
+
+echo -e "${CYAN}남아있는 스크린도 삭제할게요${NC}"
+screen -X -S Celestia_wallet kill
+screen -X -S Celestia_logs kill
+
 echo -e "${BOLD}${RED}남아있던 셀레스티아 노드가 흔적도 없이 지워졌어요. 나중에 재설치 하고 싶으면 다시 스크립트 입력해서 하세용~ ㅎㅎ${NC}"
 }
 # 메인 메뉴
