@@ -187,11 +187,24 @@ echo -e "${CYAN}상태창 띄워드릴게용~${NC}"
 sudo systemctl status celestia-light --no-pager
 
 
-echo -e "${BOLD}${MAGENTA}아직 끝난 거 아니에용. 홈페이지에 들어가서 제가 입력하라고 한 2개의 명령어 (AUTH_TOKEN 부분) 입력해 주세용${NC}"
+echo -e "${BOLD}${MAGENTA}아직 끝난 거 아니에용. 다시 스크립트를 켜서 3번 입력해서 AUTH_TOKEN까지 설정해 주세요.${NC}"
 echo -e "${BOLD}${MAGENTA}이후 'screen -S Celestia_logs' 쳐서 'sudo journalctl -u celestia-light -f' 입력 후에 로그가 제대로 나오는지 확인${NC}"
 echo -e "${BOLD}${MAGENTA}로그가 주르륵 올라오면 컨트롤 A + D 를 눌러서 스크린에서 탈출해 보세요${NC}"
 }
 
+#AUTH_TOKEN 설정하기
+AUTH_TOKEN() {
+echo -e "${CYAN}이미 있는 AUTH_TOKEN 명령어 삭제하기"
+unset AUTH_TOKEN
+
+echo -e "${CYAN}AUTH_TOKEN을 설정하고 있어요. ${NC}"
+AUTH_TOKEN=$(celestia light auth admin --p2p.network celestia)
+
+echo -e "${BOLD}${MAGENTA}AUTH_TOKEN이 잘 설정됐는지 확인하기 ${NC}"
+curl -X POST -H "Authorization: Bearer $AUTH_TOKEN" -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":0,"method":"p2p.Info","params":[]}' http://localhost:26658
+
+echo -e "${CYAN}잘 실행됐으니까 이제 발 닦고 잠이나 자러 가렴${NC}"
+}
 celestia_update() {
 echo -e "${BOLD}${MAGENTA}아쉽게도 9월 16일자 기준으로 셀레스티아는 업데이트를 하지 않았어~${NC}"
 echo -e "${BOLD}${MAGENTA}나중에 업데이트 진행하면 공지방으로 꼭 알려줄게~ 걱정마 ♥${NC}"
@@ -258,10 +271,11 @@ echo && echo -e "${BOLD}${MAGENTA}celestia light 노드 자동 설치 스크립�
  ———————————————————————
  ${GREEN} 1. 기본파일 설치 및 celestia_light 설치 ${NC}
  ${GREEN} 2. celestia_light 실행 ${NC}
- ${GREEN} 3. celestia_light 업데이트(현재 미지원) ${NC}
- ${GREEN} 4. celestia_light 스테이터스 확인 ${NC}
- ${GREEN} 5. celestia 재시작 ${NC}
- ${GREEN} 6. celestia 삭제 ${NC}
+ ${GREEN} 3. AUTH_TOKEN 설정(2번 진행한 뒤에 꼭 해줘) ${NC}
+ ${GREEN} 4. celestia_light 업데이트(현재 미지원) ${NC}
+ ${GREEN} 5. celestia_light 스테이터스 확인 ${NC}
+ ${GREEN} 6. celestia 재시작 ${NC}
+ ${GREEN} 7. celestia 삭제 ${NC}
  ———————————————————————" && echo
 
 # 사용자 입력 대기
@@ -276,15 +290,18 @@ case "$num" in
     celestia_execution
     ;;
 3)
-    celestia_update
+    AUTH_TOKEN
     ;;
 4)
-    check_status_of_celestia
+    celestia_update
     ;;
 5)
-    restart_celestia
+    check_status_of_celestia
     ;;
 6)
+    restart_celestia
+    ;;
+7)
     uninstall_celestia
     ;;
 *)
