@@ -67,6 +67,24 @@ screen -r Celestia_wallet
 
 근데 이게 시간이 넘 오래 되면 ㅎ 안 뜰 수도 있어욤. 그건 스크린이 시간이 지나면서 삭제된 건데. 얘 뭐.... 안타깝습니다..
 
+## 다른 방법으로 내 셀레스티아가 잘 굴러가는지 보고 싶어요
+
+```bash
+screen -S Celestia_logs
+```
+를 쳐서 새로운 스크린에 들어가고
+```bash
+sudo journalctl -u celestia-light -f
+```
+를 치면 셀레스티아 로그들이 뜰 거에용. 
+![image](https://github.com/user-attachments/assets/cc2c7576-357c-47cd-9489-d954dd0a4415)
+이런 식으로 로그들이 올라오면 CTRL + A + D 를 눌러서 스크린에서 나오시면 됩니다~
+
+로그들을 다시 보고 싶으면
+```bash
+screen -r Celestia_logs
+```
+를 치면 됩니당
 ## 내가 셀레스티아 노드를 내 가상서버에서 지워버리고 싶어요 ㅠㅠ
 ```bash
 [ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
