@@ -226,6 +226,7 @@ echo -e "${BOLD}${MAGENTA}STATUS : active가 떠있니? 만약 떠있지 않다�
 uninstall_celestia() {
 echo -e "${CYAN}sudo rm -rf $HOME/celestia-node${NC}"
 sudo rm -rf $HOME/celestia-node
+sudo rm -rf $HoME/.celestia-light
 
 echo -e "${CYAN}Go 언어 제거하기${NC}"
 sudo apt-get purge golang-go -y
