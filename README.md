@@ -67,7 +67,7 @@ screen -r Celestia_wallet
 
 근데 이게 시간이 넘 오래 되면 ㅎ 안 뜰 수도 있어욤. 그건 스크린이 시간이 지나면서 삭제된 건데. 얘 뭐.... 안타깝습니다..
 
-## 다른 방법으로 내 셀레스티아가 잘 굴러가는지 보고 싶어요
+## 다른 방법으로 내 셀레스티아가 잘 굴러가는지 보고 싶어요 (+지갑 확인)
 
 ```bash
 screen -S Celestia_logs
@@ -85,6 +85,12 @@ sudo journalctl -u celestia-light -f
 screen -r Celestia_logs
 ```
 를 치면 됩니당
+
+> 만약 내 노드에 있는 셀레스티아 지갑을 보고 싶으시다면?
+```bash
+cd ~/celestia-node && ./cel-key list --node.type light --keyring-backend test --p2p.network celestia
+```
+를 입력하면 내 지갑이 보여요~
 ## 내가 셀레스티아 노드를 내 가상서버에서 지워버리고 싶어요 ㅠㅠ
 ```bash
 [ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
