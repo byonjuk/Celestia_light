@@ -91,8 +91,70 @@ screen -r Celestia_logs
 cd ~/celestia-node && ./cel-key list --node.type light --keyring-backend test --p2p.network celestia
 ```
 를 입력하면 내 지갑이 보여요~
+
 ## 내가 셀레스티아 노드를 내 가상서버에서 지워버리고 싶어요 ㅠㅠ
 ```bash
 [ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
 ```
 를 입력해서 '7'을 입력하면 셀레스티아가 말끔하게 지워져요~
+
+## 좆됐어요. 저 셀레스티아 이전 지갑으로 다시 깔아야 돼요(이전 키 복구하고 싶어요)
+> #### ***절대 권장하지 않음***
+
+1. 터미널을 킨다***콘타보로그인은하지마세요제발***
+
+2. 아래 명령어를 입력한다
+```bash
+mkdir -p /likalika/yourcelestiakeys
+```
+
+3. 아래 명령어를 입력한다
+```bash
+scp -r root@니.아이피.잘.입력하셈:~/.celestia-light/keys /likalika/yourcelestiakeys
+```
+
+3-1. 이거 입력하면 비번 입력하란 문구가 뜨는데 비번 입력한다. 비번 입력하고 나면 100% 되면서 끝날 거임
+
+4. 이제 셀레스티아가 깔린 콘타보를 초기화한다. (다른 거 백업할 거 있으면 백업해 두셈)
+
+5. 터미널 다시 키고 ***내 콘타보로 로그인***해서 깃헙 들어가서 쉘스크립트 명령어 치고 1번을 입력해서 기본 설치를 마친다. (celestia init까지 하고 오셈)
+
+6. 아래 키를 입력한다.
+```bash
+cd && sudo rm -rf ~/.celestia-light/keys/*
+```
+
+7. 다시 터미널을 킨다***콘타보로그인은하지마세요제발***
+
+8. 아래 명령어를 입력한다
+```bash
+scp -r /likalika/yourcelestiakeys/keys/* root@니.아이피.제대로.입력:~/.celestia-light/keys
+```
+
+8-1. 또 비번 입력하라는데 입력하고 100% 되면 냅둔다.
+
+9. 터미널 또 새로 켜서 ***내 콘타보로 로그인***한다.
+
+10. 아래 명령어 입력해서 로컬에 저장된 파일이랑 콘타보에 저장된 파일이랑 매치되는지 확인한다. 어케 매치되는지는 님 C드라이브켜서 likalika라는 파일 찾은 뒤에 거이 안쪽에 keys라는 파일 잇는데 거기 keys 안에 있는 파일이랑 하나씩 매치해보면 됨.
+```bash
+ls -l ~/.celestia-light/keys
+```
+
+11. 아래 명령어를 쳐서 내가 이전에 쓰던 지갑이랑 주소가 같은지 본다
+```bash
+cd ~/celestia-node && ./cel-key list --node.type light --keyring-backend test --p2p.network celestia
+```
+12. 아래 두 명령어를 복사한다.
+```bash
+chmod 600 ~/.celestia-light/keys/*
+chmod 700 ~/.celestia-light/keys/keyring-test
+```
+
+13. 이제 다시 스크립트 켜서 2번, 3번 과정 하면 됨
+
+14. 새로 터미널을 킨다***콘타보로그인은하지마세요제발***
+
+15. 아래 명령어를 입력한다
+```bash
+rm -f /likalika/yourcelestiakeys
+```
