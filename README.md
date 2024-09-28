@@ -110,7 +110,7 @@ mkdir -p /likalika/yourcelestiakeys
 
 3. 아래 명령어를 입력한다
 ```bash
-scp -r root@니.아이피.잘.입력하셈:~/.celestia-light/keys /likalika/yourcelestiakeys
+scp -r root@you.r.IP.address:~/.celestia-light/keys /likalika/yourcelestiakeys
 ```
 
 3-1. 이거 입력하면 비번 입력하란 문구가 뜨는데 비번 입력한다. 비번 입력하고 나면 100% 되면서 끝날 거임
@@ -128,7 +128,7 @@ cd && sudo rm -rf ~/.celestia-light/keys/*
 
 8. 아래 명령어를 입력한다
 ```bash
-scp -r /likalika/yourcelestiakeys/keys/* root@니.아이피.제대로.입력:~/.celestia-light/keys
+scp -r /likalika/yourcelestiakeys/keys/* root@you.r.IP.address:~/.celestia-light/keys
 ```
 
 8-1. 또 비번 입력하라는데 입력하고 100% 되면 냅둔다.
@@ -156,5 +156,5 @@ chmod 700 ~/.celestia-light/keys/keyring-test
 
 15. 아래 명령어를 입력한다
 ```bash
-rm -f /likalika/yourcelestiakeys
+rm /likalika/yourcelestiakeys
 ```
