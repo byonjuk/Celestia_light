@@ -198,9 +198,65 @@ echo -e "${CYAN}잘 실행됐으니까 이제 발 닦고 잠이나 자러 가렴
 }
 celestia_update() {
 echo -e "${BOLD}${MAGENTA}아쉽게도 9월 16일자 기준으로 셀레스티아는 업데이트를 하지 않았어~${NC}"
-echo -e "${BOLD}${MAGENTA}나중에 업데이트 진행하면 공지방으로 꼭 알려줄게~ 걱정마 ♥${NC}"
+cd $HOME/celestia-node
+
+git fetch --all --tags
+
+git checkout tags/v0.17.2
+
+make clean
+make build
+sudo make install
+
+sudo systemctl daemon-reload
+sudo systemctl start celestia-light
+sudo systemctl enable celestia-light
+
+sudo systemctl start celestia-light
+
+check_containers() {
+    echo -e "${CYAN}celestia version${NC}"
+    celestia version
+
+    echo -e "${CYAN}celestia version 밑에 뜨는 문구 확인해 보삼${NC}"
+    echo -ne "${CYAN}celestia version이 0.17.2로 뜨는 게 맞을까요? (yes/no): ${NC}"
+    read -e answer
+    case $answer in
+        [Yy]* ) return 0 ;;  # 바로 리턴
+        [Nn]* ) 
+            echo -e "${RED}다시 띄워드릴게요... ${NC}"
+            sleep 3
+            return 1
+            ;;
+        * ) 
+            echo -e "${RED}Please answer yes or no.${NC}"
+            return 1
+            ;;
+    esac
 }
-# 셀레스티아 노드 업데이트하기
+
+# Main loop
+attempts=0
+max_attempts=2
+
+while [ $attempts -lt $max_attempts ]
+do
+    if check_containers; then
+        break
+    fi
+    attempts=$((attempts+1))
+done
+
+if [ $attempts -eq $max_attempts ]; then
+    echo -e "${BOLD}${MAGENTA}celestia version이 제대로 안 뜨는 것 같다?${NC}"
+    echo -e "${BOLD}${MAGENTA}카톡방에 제가 올려 둔 가이드대로 업데이트 따로 해보세욤. 근데 안 뜰 수가 없음 ㅉ${NC}"
+	exit 1
+fi
+echo -e "${BOLD}${MAGENTA}나중에 업데이트 진행하면 공지방으로 꼭 알려줄게~ 걱정마 ♥${NC}"
+sleep 5
+sudo systemctl status celestia-light --no-pager
+}
+
 check_status_of_celestia() {
 echo -e "${BOLD}${CYAN}셀레스티아 상태창을 띄워드릴게요. 잘 돌아가는지 확인해 보세요~${NC}"
 sudo systemctl status celestia-light --no-pager
@@ -266,7 +322,7 @@ echo -e "${BOLD}${RED}남아있던 셀레스티아 노드가 흔적도 없이 �
 }
 # 메인 메뉴
 echo && echo -e "${BOLD}${MAGENTA}celestia light 노드 자동 설치 스크립트${NC} by 비욘세제발죽어
- ${CYAN}원하는 거 고르시고 실행하시고 그러세효. ${NC}
+${CYAN}원하는 거 고르시고 실행하시고 그러세효. ${NC}
  ———————————————————————
  ${GREEN} 1. 기본파일 설치 및 celestia_light 설치 ${NC}
  ${GREEN} 2. celestia_light 실행 ${NC}
