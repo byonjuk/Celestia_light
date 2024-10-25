@@ -196,23 +196,25 @@ curl -X POST -H "Authorization: Bearer $AUTH_TOKEN" -H 'Content-Type: applicatio
 
 echo -e "${CYAN}잘 실행됐으니까 이제 발 닦고 잠이나 자러 가렴${NC}"
 }
+
 celestia_update() {
-echo -e "${BOLD}${MAGENTA}아쉽게도 9월 16일자 기준으로 셀레스티아는 업데이트를 하지 않았어~${NC}"
+echo -e "${BOLD}${MAGENTA}셀레스티아 업데이트를 시작합니다.${NC}"
+echo -e "${CYAN}버젼을 업데이트 합니다.${NC}"
 cd $HOME/celestia-node
 
 git fetch --all --tags
 
 git checkout tags/v0.17.2
 
+echo -e "${CYAN}업데이트된 버젼을 설치합니다.${NC}"
 make clean
 make build
 sudo make install
 
+echo -e "${CYAN}셀레스티아를 재시작합니다.${NC}"
 sudo systemctl daemon-reload
 sudo systemctl start celestia-light
 sudo systemctl enable celestia-light
-
-sudo systemctl start celestia-light
 
 check_containers() {
     echo -e "${CYAN}celestia version${NC}"
@@ -252,9 +254,11 @@ if [ $attempts -eq $max_attempts ]; then
     echo -e "${BOLD}${MAGENTA}카톡방에 제가 올려 둔 가이드대로 업데이트 따로 해보세욤. 근데 안 뜰 수가 없음 ㅉ${NC}"
 	exit 1
 fi
-echo -e "${BOLD}${MAGENTA}나중에 업데이트 진행하면 공지방으로 꼭 알려줄게~ 걱정마 ♥${NC}"
-sleep 5
+echo -e "${BOLD}${CYAN}잘 돌아가는지 한 번 확인하세용${NC}"
+sleep 3
 sudo systemctl status celestia-light --no-pager
+
+echo -e "${CYAN}업데이트가 완료되었습니다.${NC}"
 }
 
 check_status_of_celestia() {
