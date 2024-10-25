@@ -197,6 +197,7 @@ curl -X POST -H "Authorization: Bearer $AUTH_TOKEN" -H 'Content-Type: applicatio
 echo -e "${CYAN}잘 실행됐으니까 이제 발 닦고 잠이나 자러 가렴${NC}"
 }
 
+#셀레스티아 업데이트
 celestia_update() {
 echo -e "${BOLD}${MAGENTA}셀레스티아 업데이트를 시작합니다.${NC}"
 echo -e "${CYAN}버젼을 업데이트 합니다.${NC}"
@@ -215,45 +216,9 @@ echo -e "${CYAN}셀레스티아를 재시작합니다.${NC}"
 sudo systemctl daemon-reload
 sudo systemctl start celestia-light
 sudo systemctl enable celestia-light
+echo -e "${CYAN}celestia version${NC}"
+celestia version
 
-check_containers() {
-    echo -e "${CYAN}celestia version${NC}"
-    celestia version
-
-    echo -e "${CYAN}celestia version 밑에 뜨는 문구 확인해 보삼${NC}"
-    echo -ne "${CYAN}celestia version이 0.17.2로 뜨는 게 맞을까요? (yes/no): ${NC}"
-    read -e answer
-    case $answer in
-        [Yy]* ) return 0 ;;  # 바로 리턴
-        [Nn]* ) 
-            echo -e "${RED}다시 띄워드릴게요... ${NC}"
-            sleep 3
-            return 1
-            ;;
-        * ) 
-            echo -e "${RED}Please answer yes or no.${NC}"
-            return 1
-            ;;
-    esac
-}
-
-# Main loop
-attempts=0
-max_attempts=2
-
-while [ $attempts -lt $max_attempts ]
-do
-    if check_containers; then
-        break
-    fi
-    attempts=$((attempts+1))
-done
-
-if [ $attempts -eq $max_attempts ]; then
-    echo -e "${BOLD}${MAGENTA}celestia version이 제대로 안 뜨는 것 같다?${NC}"
-    echo -e "${BOLD}${MAGENTA}카톡방에 제가 올려 둔 가이드대로 업데이트 따로 해보세욤. 근데 안 뜰 수가 없음 ㅉ${NC}"
-	exit 1
-fi
 echo -e "${BOLD}${CYAN}잘 돌아가는지 한 번 확인하세용${NC}"
 sleep 3
 sudo systemctl status celestia-light --no-pager
