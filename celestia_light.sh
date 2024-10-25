@@ -331,7 +331,7 @@ ${CYAN}원하는 거 고르시고 실행하시고 그러세효. ${NC}
  ${GREEN} 1. 기본파일 설치 및 celestia_light 설치 ${NC}
  ${GREEN} 2. celestia_light 실행 ${NC}
  ${GREEN} 3. AUTH_TOKEN 설정(2번 진행한 뒤에 꼭 해줘) ${NC}
- ${GREEN} 4. celestia_light 업데이트(현재 미지원) ${NC}
+ ${GREEN} 4. celestia_light 업데이트(V0.17.2) ${NC}
  ${GREEN} 5. celestia_light 스테이터스 확인 ${NC}
  ${GREEN} 6. celestia 재시작 ${NC}
  ${GREEN} 7. celestia 삭제 ${NC}
