@@ -3,7 +3,7 @@
 - 먼저 콘타보에 로그인하세용~
 ## 설치 명령어
 ```bash
-[ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
+[ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/koinlove/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
 ```
 위 문구를 복사해서 콘타보에 입력하며
 ![image](https://github.com/user-attachments/assets/727f61dd-2a36-4d32-950a-5dba42873024)
@@ -25,13 +25,13 @@ celestia light init --core.ip rpc.celestia.pops.one --p2p.network celestia
 
 그 다음으로는
 ```bash
-[ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
+[ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/koinlove/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
 ```
 를 다시 입력해서 '2'를 입력하신 뒤에 실행까지 완료해 주세요~
 
 ## AUTH_TOKEN 설정하기
 ```bash
-[ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
+[ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/koinlove/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
 ```
 를 다시 입력해서 3번을 입력하시면 됩니다~
 
@@ -43,7 +43,7 @@ celestia light init --core.ip rpc.celestia.pops.one --p2p.network celestia
 
 > ## 그 외에도....
 ```bash
-[ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
+[ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/koinlove/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
 ```
 ![image](https://github.com/user-attachments/assets/be6cf918-66e3-4ca2-ae1a-3ad536b338fc)
 4번, 5번, 6번 입력하시면 각각 업데이트, 상태창 확인, 재시작 등등 다 가능하니까 많이 애용해 주세요~
@@ -94,7 +94,7 @@ cd ~/celestia-node && ./cel-key list --node.type light --keyring-backend test --
 
 ## 내가 셀레스티아 노드를 내 가상서버에서 지워버리고 싶어요 ㅠㅠ
 ```bash
-[ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/byonjuk/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
+[ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/koinlove/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
 ```
 를 입력해서 '7'을 입력하면 셀레스티아가 말끔하게 지워져요~
 
