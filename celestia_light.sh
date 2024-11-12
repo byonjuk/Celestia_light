@@ -290,7 +290,7 @@ screen -X -S Celestia_logs kill
 echo -e "${BOLD}${RED}남아있던 셀레스티아 노드가 흔적도 없이 지워졌어요. 나중에 재설치 하고 싶으면 다시 스크립트 입력해서 하세용~ ㅎㅎ${NC}"
 }
 # 메인 메뉴
-echo && echo -e "${BOLD}${MAGENTA}celestia light 노드 자동 설치 스크립트${NC} by 비욘세제발죽어
+echo && echo -e "${BOLD}${MAGENTA}celestia light 노드 자동 설치 스크립트${NC} by 코인러브미순
 ${CYAN}원하는 거 고르시고 실행하시고 그러세효. ${NC}
  ———————————————————————
  ${GREEN} 1. 기본파일 설치 및 celestia_light 설치 ${NC}
