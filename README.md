@@ -6,7 +6,7 @@
 [ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/koinlove/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
 ```
 위 문구를 복사해서 콘타보에 입력하며
-![image](https://github.com/user-attachments/assets/727f61dd-2a36-4d32-950a-5dba42873024)
+![image](https://github.com/user-attachments/assets/3c0cadf2-30cd-4b1c-a407-5a03fcff1c12)
 이런 화면이 뜰 거에요. 여기서 1번 입력하시면 됩니당.
 
 1번 입력하고 설치가 되다가 중간에 어떤 명령어가 뜰 거에요. 그러면
@@ -45,7 +45,7 @@ celestia light init --core.ip rpc.celestia.pops.one --p2p.network celestia
 ```bash
 [ -f "celestia_light.sh" ] && rm celestia_light.sh; wget -q https://raw.githubusercontent.com/koinlove/Celestia_light/main/celestia_light.sh && chmod +x celestia_light.sh && ./celestia_light.sh
 ```
-![image](https://github.com/user-attachments/assets/be6cf918-66e3-4ca2-ae1a-3ad536b338fc)
+![image](https://github.com/user-attachments/assets/a597e3c2-812f-441b-926e-9a13b61abbbc)
 4번, 5번, 6번 입력하시면 각각 업데이트, 상태창 확인, 재시작 등등 다 가능하니까 많이 애용해 주세요~
 
 ## 추가작업(퍼셋을 받아야 해요~)
